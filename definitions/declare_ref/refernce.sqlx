@@ -1,0 +1,11 @@
+config {
+    type: 'table',
+    schema: 'Nandu'
+}
+
+SELECT
+  *
+FROM
+  ${ref("employees")}
+WHERE
+  is_active = TRUE
