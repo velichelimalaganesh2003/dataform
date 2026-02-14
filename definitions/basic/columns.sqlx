@@ -1,0 +1,15 @@
+config {
+    type: "table",
+    description: "This table is an example",
+    columns: {
+        salary: "salary of the user",
+        is_active: "Existance of the user"
+    }
+
+}
+
+SELECT
+  salary,
+  is_active
+FROM
+  ${ref("refernce")}
