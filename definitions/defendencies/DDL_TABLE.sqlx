@@ -1,0 +1,8 @@
+config {
+    dependencies: ["DDL_SCHEMA"]
+}
+
+CREATE TABLE IF NOT EXISTS
+  DEPENDICES.CHITTI( NAME STRING,
+    PLACE STRING,
+    PH_NO INT64);
