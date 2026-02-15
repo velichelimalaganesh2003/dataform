@@ -1,0 +1,14 @@
+config {
+    type: "incremental",
+    schema: "ganesh"
+}
+
+SELECT
+  id
+FROM
+  ${ref("sample_table")}
+  ${
+      when(incremental(),
+          `WHERE insert_timestamp > (SELECT MAX(insert_timestamp) FROM ${self()})`
+      )
+  }
