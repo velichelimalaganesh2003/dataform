@@ -1,0 +1,8 @@
+config {
+  type: "table",
+  schema: "Nandu",
+  dependencies: ["assertion_base"]
+}
+
+SELECT *
+FROM ${ref("employees")}

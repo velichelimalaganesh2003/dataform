@@ -1,0 +1,8 @@
+config {
+  type: "assertion"
+}
+
+SELECT is_active
+FROM ${ref("employees")}
+GROUP BY is_active
+HAVING COUNT(*) > 1

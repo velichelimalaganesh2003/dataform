@@ -1,0 +1,13 @@
+config {
+    type: "table",
+    schema: "Nandu",
+    assertions: {
+        nonNull: ["employee_id"],
+        uniqueKey: ["is_active"]
+    }
+}
+
+SELECT
+  *
+FROM
+  ${ref("employees")}

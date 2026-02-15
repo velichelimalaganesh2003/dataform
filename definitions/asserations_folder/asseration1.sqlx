@@ -1,0 +1,10 @@
+config {
+    type: "assertion"
+}
+
+SELECT
+  *
+FROM
+  ${ref("employees")}
+WHERE
+  employee_id = 103
