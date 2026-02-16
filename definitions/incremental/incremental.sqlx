@@ -1,14 +1,15 @@
 config {
     type: "incremental",
-    schema: "ganesh"
+    schema: "Nandu"
 }
 
 SELECT
-  id
+  id,
+  current_timestamp() as inserted_timestamp
 FROM
   ${ref("sample_table")}
   ${
       when(incremental(),
-          `WHERE insert_timestamp > (SELECT MAX(insert_timestamp) FROM ${self()})`
+          `WHERE id > (SELECT MAX(id) FROM ${self()})`
       )
   }

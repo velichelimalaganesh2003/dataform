@@ -3,7 +3,8 @@ config {
 }
 
 SELECT
-  *
+  *,
+  current_timestamp() as inserted_timestamp
 FROM
   clear-apogee-479910-j1.ganesh.employees
 WHERE
