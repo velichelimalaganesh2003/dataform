@@ -1,5 +1,5 @@
 config {
-    tags: ["tag"]
+    tags: ["basic_tag"]
 }
 
 SELECT
