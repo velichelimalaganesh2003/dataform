@@ -1,6 +1,7 @@
 config {
     type: 'table',
-    schema: 'Nandu'
+    schema: 'ganesh1',
+   name:'employees_true'
 }
 
 SELECT

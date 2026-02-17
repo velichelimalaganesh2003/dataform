@@ -1,4 +1,4 @@
 SELECT
   SUM(salary)
 FROM
-  ${ref("refernce")}
+  ${ref("employees_true")}

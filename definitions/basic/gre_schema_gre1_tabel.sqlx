@@ -1,0 +1,11 @@
+config {
+    type: 'table',
+    schema: 'gre'
+}
+
+SELECT
+  *
+FROM
+  clear-apogee-479910-j1.ganesh.employees
+WHERE
+  is_active = True

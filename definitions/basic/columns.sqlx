@@ -12,4 +12,4 @@ SELECT
   salary,
   is_active
 FROM
-  ${ref("refernce")}
+  ${ref("employees_true")}
