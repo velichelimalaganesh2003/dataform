@@ -1,0 +1,13 @@
+config {
+  type: "table"
+}
+
+js {
+  const common = require("../../includes/common_functions");
+}
+
+SELECT
+  employee_id,
+  ${common.castColumn("employee_id", "STRING")} AS employee_id_str,
+  ${common.addAuditColumns()}
+FROM ${ref("employees")}
