@@ -4,5 +4,6 @@ config {
   dependencies: ["assertion_base"]
 }
 
+
 SELECT *
 FROM ${ref("employees")}
