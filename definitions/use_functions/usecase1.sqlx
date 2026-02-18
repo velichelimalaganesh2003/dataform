@@ -1,5 +1,7 @@
 config {
-  type: "table"
+  type: "table",
+  schema: "Nandu",
+  name: "Function_usage"
 }
 
 js {
