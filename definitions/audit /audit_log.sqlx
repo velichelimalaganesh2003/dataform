@@ -1,0 +1,9 @@
+config {
+    type:'operations',
+    name:'audit_log',
+    hasOutput: true,
+    schema: 'analytics'
+}
+create table if not exists analytics.audit_log
+(table_name String,status String,row_count int64,start_time timestamp
+,end_time timestamp)

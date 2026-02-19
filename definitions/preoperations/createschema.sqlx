@@ -1,0 +1,13 @@
+config {
+  type: "table",
+  schema: "analytics"
+}
+
+pre_operations {
+  CREATE SCHEMA IF NOT EXISTS analytics
+}
+
+SELECT * 
+FROM ${ref("employees")}
+
+

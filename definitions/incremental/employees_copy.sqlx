@@ -1,9 +1,27 @@
 config {
   type: "incremental",
-  uniqueKey: ["employee_id"]
-  
+  uniqueKey: ["employee_id"],
+  schema: 'ganesh1'
+ 
 }
 
-select
-employee_id,employee_name,salary+1000 as updated_salary,joining_date,is_active
-from ganesh.employees
+pre_operations {
+insert into ${ref("audit_log")}(table_name, status, start_time) 
+values( "dataform.employees_copy","started",CURRENT_TIMESTAMP()) ; 
+}
+
+SELECT 
+  vendor_id, 
+  pickup_datetime, 
+  dropoff_datetime, 
+  passenger_count, 
+  trip_distance, 
+  fare_amount, 
+  tip_amount, 
+  total_amount+1000 as totalamnt
+FROM ganesh1.employees
+
+post_operations {
+ insert into ${ref("audit_log")}(table_name, status, end_time) 
+ values( "dataform.employees_copy","ended",CURRENT_TIMESTAMP()) ;  
+}
